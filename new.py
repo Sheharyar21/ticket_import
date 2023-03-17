@@ -59,11 +59,11 @@ for rr in range(0,30000):
         file1.write("select @status := ticketstatusid from tbltickets_status where name  like " + "'%"+str(y['status']['name'])+ "%';"+"\n")
 
         if y['assigned_to'] == 'null' or y['assigned_to'] is None:
-            file1.write("insert  into tbltickets values ("+str(well_id1) + ",0,"+str(y['user']['id'])+","+str(y['user']['id'])+",0,'"+str(y['user']['email'])+"' ,'', "+ str(y['category']['id']) + "," + str(y['priority']['id']) + "," + "@status,0,'','" + rp(str(y['subject']))+"','"+rp(func(str(y['first_message'])))+"','','"+str(y['last_updated_at']) + "',0,'"+str(y['last_user_reply_at'])+"',0,0,'',0,'');"+"\n")
+            file1.write("insert  into tbltickets values ("+str(well_id1) + ",0,"+str(y['user']['id'])+","+str(y['user']['id'])+",0,'"+str(y['user']['email'])+"' ,'', "+ str(y['category']['id']) + "," + str(y['priority']['id']) + "," + "@status,0,'','" + rp(str(y['subject']))+"','"+rp(func(str(y['first_message'])))+"','','"+str(y['last_updated_at']) + "',0,'"+str(y['last_user_reply_at'])+"',0,0,'',0,'',0,0);"+"\n")
             file1.write("\n\n\n\n")
         
         else:
-            file1.write("insert  into tbltickets values ("+str(well_id1) + ",0,"+str(y['user']['id'])+","+str(y['user']['id'])+",0,'"+str(y['user']['email'])+"' ,'', "+ str(y['category']['id']) + "," + str(y['priority']['id']) + "," + "@status,0,'','" + rp(str(y['subject']))+"','"+rp(func(str(y['first_message'])))+"','','"+str(y['last_updated_at']) + "',0,'"+str(y['last_user_reply_at'])+"',0,0,"+str(y['assigned_to']['id'])+",0,'');"+"\n")
+            file1.write("insert  into tbltickets values ("+str(well_id1) + ",0,"+str(y['user']['id'])+","+str(y['user']['id'])+",0,'"+str(y['user']['email'])+"' ,'', "+ str(y['category']['id']) + "," + str(y['priority']['id']) + "," + "@status,0,'','" + rp(str(y['subject']))+"','"+rp(func(str(y['first_message'])))+"','','"+str(y['last_updated_at']) + "',0,'"+str(y['last_user_reply_at'])+"',0,0,"+str(y['assigned_to']['id'])+",0,'',0,0);"+"\n")
             file1.write("\n\n\n\n")
         for z in y['updates']:
           #print(z)
